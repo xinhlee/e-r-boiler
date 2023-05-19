@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                npm run build
-                mv './client/build' './serv/'
-                gh-pages -d './serv/build/'
+                sh 'npm run build'
+                sh 'mv ./client/build ./serv/'
+                sh 'gh-pages -d ./serv/build/'
             }
         }
     }
