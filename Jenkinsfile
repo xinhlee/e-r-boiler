@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd ./client && ls'
+                sh 'cd ./client && npm install'
+                sh 'cd ./serv && npm install'
                 sh 'npm run build'
                 sh 'mv ./client/build ./serv/'
                 sh 'npx gh-pages -d ./serv/build/'
