@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cd client'
+                sh 'cd ./client'
                 sh 'ls'
                 sh 'npm i'
                 sh 'cd ../'
-                sh 'cd serv'
+                sh 'cd ./serv'
                 sh 'npm i'
                 sh 'cd ../'
                 sh 'npm run build'
