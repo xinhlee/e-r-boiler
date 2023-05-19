@@ -4,10 +4,6 @@ const app = express();
 
 app.use(express.static("build"));
 
-app.get("/", (req, res) => {
-  res.send("Welcome");
-});
-
 app.post("/sendName", (req, res) => {
   console.log("NAME RECEIVED");
   console.log("saved to databse");
