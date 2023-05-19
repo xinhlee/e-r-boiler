@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'cd client'
+                sh 'ls'
                 sh 'npm i'
                 sh 'cd ../'
                 sh 'cd serv'
