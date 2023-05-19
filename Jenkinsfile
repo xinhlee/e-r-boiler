@@ -4,9 +4,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'cd client'
+                sh 'npm i'
+                sh 'cd ../'
+                sh 'cd serv'
+                sh 'npm i'
+                sh 'cd ../'
                 sh 'npm run build'
                 sh 'mv ./client/build ./serv/'
-                sh 'gh-pages -d ./serv/build/'
+                sh 'npx gh-pages -d ./serv/build/'
             }
         }
     }
